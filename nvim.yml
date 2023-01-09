@@ -1,0 +1,68 @@
+---
+
+#
+# A playbook that installs NeoVim and dependencies.  It is assumed that most
+# NeoVim-specific configuration (plugins, remaps, set options, etc.) are in
+# _this_ repository.  This is primarily for installing binaries/packages and
+# some ~/.bashrc stuff.  The user running this playbook should have sudo (to
+# root) permissions.
+#
+
+- name: Setup NeoVim locally the way Ben likes it
+  hosts: localhost
+  gather_facts: false
+  vars:
+    ansible_connection: local
+    set_nvim_as_editor: true
+    set_nvim_as_vi_alias: true
+    set_nvim_as_vim_alias: true
+    nvim_version: v0.8.2  # check GitHub releases for available versions
+    install_nvm: false
+  tasks:
+
+    - name: GET_URL | download nvim.appimage and install to /usr/local/bin/
+      become: true
+      ansible.builtin.get_url:
+        url: https://github.com/neovim/neovim/releases/download/{{ nvim_version }}/nvim.appimage
+        dest: /usr/local/bin/nvim
+        mode: u=rwx,g=rx,o=rx
+      tags: [nvim_download]
+
+    - name: APT | install some packages
+      become: true
+      ansible.builtin.apt:
+        name:
+          - ripgrep
+        state: present
+      tags: [apt, packages]
+
+    - name: SHELL | echo home
+      ansible.builtin.shell: echo $HOME
+      register: shell_out
+      changed_when: false
+
+    - name: SET_FACT | whoiam
+      ansible.builtin.set_fact:
+        my_home: "{{ shell_out.stdout }}"
+
+    - name: LINEINFILE | set nvim as EDITOR
+      ansible.builtin.lineinfile:
+        path: "{{ my_home }}/.bashrc"
+        line: 'export EDITOR=/usr/local/bin/nvim'
+        state: present
+      when: set_nvim_as_editor | bool
+
+    - name: LINEINFILE | setup vi alias
+      ansible.builtin.lineinfile:
+        path: "{{ my_home }}/.bashrc"
+        line: 'alias vi=nvim'
+        state: present
+      when: set_nvim_as_vi_alias | bool
+
+    - name: LINEINFILE | setup vim alias
+      ansible.builtin.lineinfile:
+        path: "{{ my_home }}/.bashrc"
+        line: 'alias vim=nvim'
+        state: present
+      when: set_nvim_as_vim_alias | bool
+

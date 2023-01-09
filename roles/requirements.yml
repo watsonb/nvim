@@ -1,0 +1,6 @@
+---
+
+- src: git@gitlab.kiewitplaza.com:ansible/ar_nvm.git
+  scm: git
+  version: master
+
