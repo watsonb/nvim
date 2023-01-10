@@ -103,6 +103,7 @@ Here is a list of the current plugins installed and used in my setup (see
 - tpope/vim-fugitive
 - VonHeikemen/lsp-zero.nvim
 - lukas-reineke/indent-blankline.nvim
+- lewis6991/gitsigns.nvim
 
 # Custom Keymaps and Shit
 
@@ -116,67 +117,68 @@ Map the leader key to the spacebar (" ")
 
 ## Normal Mode
 
-|keymap     |file                   |description|
-|:---------:|:----------------------|:----------|
-|<leader>pv |$NVIM/lua/ben/remap.lua|Opens vim's netrw file Explorer|
-|J          |$NVIM/lua/ben/remap.lua|append line below you to current line, but keep cursor at beginning |
-|<C-d>      |$NVIM/lua/ben/remap.lua|half page jump down, keep cursor in middle |
-|<C-u>      |$NVIM/lua/ben/remap.lua|half page jump up, keep cursor in middle |
-|n          |$NVIM/lua/ben/remap.lua|keep search terms in middle of screen |
-|N          |$NVIM/lua/ben/remap.lua|keep search terms in middle of screen |
-|<leader>y  |$NVIM/lua/ben/remap.lua|yank selected to system clipboard |
-|<leader>Y  |$NVIM/lua/ben/remap.lua|yank selected to system clipboard |
-|<leader>d  |$NVIM/lua/ben/remap.lua|delete clipboard? |
-|Q          |$NVIM/lua/ben/remap.lua|no operation |
-|<C-f>      |$NVIM/lua/ben/remap.lua|new tmux window? |
-|<leader>f  |$NVIM/lua/ben/remap.lua|format buffer? |
-|<C-k>      |$NVIM/lua/ben/remap.lua|quick fix next |
-|<C-j>      |$NVIM/lua/ben/remap.lua|quick fix previous |
-|<leader>k  |$NVIM/lua/ben/remap.lua|quick fix next |
-|<leader>j  |$NVIM/lua/ben/remap.lua|quick fix previous |
-|<leader>s  |$NVIM/lua/ben/remap.lua|replace word that you're on |
-|<leader>x  |$NVIM/lua/ben/remap.lua|make current file executable |
-|<leader>gs |$NVIM/after/plugin/fugitive.lua|pull up nvim's Git integration |
-|<leader>a  |$NVIM/after/plugin/harpoon.lua|add a file to harpoon |
-|<C-e>      |$NVIM/after/plugin/harpoon.lua|toggle UI quick menu |
-|<C-h>      |$NVIM/after/plugin/harpoon.lua|navigate to file 1 |
-|<C-t>      |$NVIM/after/plugin/harpoon.lua|navigate to file 2 |
-|<C-n>      |$NVIM/after/plugin/harpoon.lua|navigate to file 3 |
-|<C-s>      |$NVIM/after/plugin/harpoon.lua|navigate to file 4 |
-|gd |$NVIM/after/plugin/lsp.lua|Only in current buffer: jump to definition |
-|K |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
-|<leader>vws |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
-|<leader>vd |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
-|[d |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
-|]d |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
-|<leader>vca |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
-|<leader>vrr |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
-|<leader>vrn |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
-|<leader>pf  |$NVIM/after/plugin/telescope.lua|Find project files |
-|<leader>ps  |$NVIM/after/plugin/telescope.lua|Grep for string |
-|<C-p>       |$NVIM/after/plugin/telescope.lua|Search in Git files |
+|keymap       |file                   |description|
+|:-----------:|:----------------------|:----------|
+|`<leader>pv` |$NVIM/lua/ben/remap.lua|[P]roject [V]iew - Opens vim's netrw file Explorer|
+|`J`          |$NVIM/lua/ben/remap.lua|append line below you to current line, but keep cursor at beginning |
+|`<C-d>`      |$NVIM/lua/ben/remap.lua|half page jump down, keep cursor in middle |
+|`<C-u>`      |$NVIM/lua/ben/remap.lua|half page jump up, keep cursor in middle |
+|`n`          |$NVIM/lua/ben/remap.lua|keep search terms in middle of screen |
+|`N`          |$NVIM/lua/ben/remap.lua|keep search terms in middle of screen |
+|`<leader>y`  |$NVIM/lua/ben/remap.lua|[Y]ank selected to system clipboard |
+|`<leader>Y`  |$NVIM/lua/ben/remap.lua|[Y]ank selected to system clipboard |
+|`<leader>d`  |$NVIM/lua/ben/remap.lua|[D]elete clipboard? |
+|`Q`          |$NVIM/lua/ben/remap.lua|no operation |
+|`<C-f>`      |$NVIM/lua/ben/remap.lua|new tmux window? |
+|`<leader>f`  |$NVIM/lua/ben/remap.lua|[F]ormat buffer? |
+|`<C-k>`      |$NVIM/lua/ben/remap.lua|quick fix next |
+|`<C-j>`      |$NVIM/lua/ben/remap.lua|quick fix previous |
+|`<leader>k`  |$NVIM/lua/ben/remap.lua|quick fix next |
+|`<leader>j`  |$NVIM/lua/ben/remap.lua|quick fix previous |
+|`<leader>s`  |$NVIM/lua/ben/remap.lua|replace word that you're on |
+|`<leader>x`  |$NVIM/lua/ben/remap.lua|make current file executable |
+|`<leader>gs` |$NVIM/after/plugin/fugitive.lua|[G]it [S]tatus - pull up nvim's Git integration |
+|`<leader>a`  |$NVIM/after/plugin/harpoon.lua|[A]dd a file to harpoon |
+|`<C-e>`      |$NVIM/after/plugin/harpoon.lua|toggle UI quick menu |
+|`<C-h>`      |$NVIM/after/plugin/harpoon.lua|navigate to file 1 |
+|`<C-t>`      |$NVIM/after/plugin/harpoon.lua|navigate to file 2 |
+|`<C-n>`      |$NVIM/after/plugin/harpoon.lua|navigate to file 3 |
+|`<C-s>`      |$NVIM/after/plugin/harpoon.lua|navigate to file 4 |
+|`gd`         |$NVIM/after/plugin/lsp.lua|Only in current buffer: [G] to [D]efinition |
+|`K`          |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
+|`<leader>vws`|$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
+|`<leader>vd` |$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
+|`[d`         |$NVIM/after/plugin/lsp.lua|Only in current buffer: prev diagnostic? |
+|`]d`         |$NVIM/after/plugin/lsp.lua|Only in current buffer: next diagnostic? |
+|`<leader>vca`|$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
+|`<leader>vrr`|$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
+|`<leader>vrn`|$NVIM/after/plugin/lsp.lua|Only in current buffer:  |
+|`<leader>pf` |$NVIM/after/plugin/telescope.lua|[P]roject [F]iles - fuzzy find |
+|`<leader>ps` |$NVIM/after/plugin/telescope.lua|[P]roject [S]earch - current word |
+|`<C-p>`      |$NVIM/after/plugin/telescope.lua|Search in Git files |
+|`<leader>pl` |$NVIM/after/plugin/telescope.lua|[P]roject [L]ive grep|
+|`<leader>sh` |$NVIM/after/plugin/telescope.lua|[S]earch [H]elp|
+|`<leader>sd' |$NVIM/after/plugin/telescope.lua|[S]earch [D]iagnostics|
+|`<leader>/`  |$NVIM/after/plugin/telescope.lua|[/] Fuzzily search in current buffer|
 
 ## Visual Mode
 
 |keymap     |file                   |description|
 |:---------:|:----------------------|:----------|
-|J          |$NVIM/lua/ben/remap.lua|Moves current highlight down|
-|K          |$NVIM/lua/ben/remap.lua|Moves current highlight up|
-|<leader>y  |$NVIM/lua/ben/remap.lua|yank selected to system clipboard |
-|<leader>d  |$NVIM/lua/ben/remap.lua|delete clipboard? |
-|<leader>p  |$NVIM/lua/ben/remap.lua|paste over selected and keep paste content in register. |
-| |$NVIM/lua/ben/remap.lua| |
+|`J`        |$NVIM/lua/ben/remap.lua|Moves current highlight down|
+|`K`        |$NVIM/lua/ben/remap.lua|Moves current highlight up|
+|`<leader>y`|$NVIM/lua/ben/remap.lua|yank selected to system clipboard |
+|`<leader>d`|$NVIM/lua/ben/remap.lua|delete clipboard? |
+|`<leader>p`|$NVIM/lua/ben/remap.lua|paste over selected and keep paste content in register. |
 
 ## Insert Mode
 
-|keymap     |file                   |description|
-|:---------:|:----------------------|:----------|
-|<C-c>      |$NVIM/lua/ben/remap.lua|Ctrl+c does same as Esc|
-|<C-p>      |$NVIM/after/plugin/lsp.lua|goto previous LSP suggestion |
-|<C-n>      |$NVIM/after/plugin/lsp.lua|goto next LSP suggestion |
-|<C-y>      |$NVIM/after/plugin/lsp.lua|use selected LSP suggestion |
-|<C-Space   |$NVIM/after/plugin/lsp.lua|toggle LSP popup |
-|<C-h>      |$NVIM/after/plugin/lsp.lua|signature help |
-| |$NVIM/after/plugin/lsp.lua| |
-| |$NVIM/after/plugin/lsp.lua| |
+|keymap     |file                      |description|
+|:---------:|:-------------------------|:----------|
+|`<C-c>`    |$NVIM/lua/ben/remap.lua   |Ctrl+c does same as Esc|
+|`<C-p>`    |$NVIM/after/plugin/lsp.lua|goto previous LSP suggestion |
+|`<C-n>`    |$NVIM/after/plugin/lsp.lua|goto next LSP suggestion |
+|`<C-y>`    |$NVIM/after/plugin/lsp.lua|use selected LSP suggestion |
+|`<C-Space>`|$NVIM/after/plugin/lsp.lua|toggle LSP popup |
+|`<C-h>`    |$NVIM/after/plugin/lsp.lua|signature help |
 
