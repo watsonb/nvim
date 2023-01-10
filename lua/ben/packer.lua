@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
+  use('ThePrimeagen/vim-be-good')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use('lewis6991/gitsigns.nvim')
@@ -67,5 +68,15 @@ return require('packer').startup(function(use)
   use('lukas-reineke/indent-blankline.nvim')
 
   use('jose-elias-alvarez/null-ls.nvim')
+
+  use({
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {
+        -- your config goes here
+        -- or just leave it empty :)
+      }
+    end,
+  })
 
 end)
