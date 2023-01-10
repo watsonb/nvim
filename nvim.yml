@@ -39,12 +39,12 @@
         mode: u=rwx,g=rx,o=rx
       tags: [bin_dir]
 
-    - name: GET_URL | download nvim.appimage and install to /usr/local/bin/
-      become: true
+    - name: GET_URL | download nvim.appimage and install to $HOME/bin/nvim
+      # become: true
       ansible.builtin.get_url:
         url: "https://github.com/neovim/neovim/releases/\
           download/{{ nvim_version }}/nvim.appimage"
-        dest: /usr/local/bin/nvim
+        dest: "{{ my_home }}/bin/nvim"
         mode: u=rwx,g=rx,o=rx
       tags: [nvim_download]
 
