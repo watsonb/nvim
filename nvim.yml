@@ -42,7 +42,7 @@
     - name: GET_URL | download nvim.appimage and install to /usr/local/bin/
       become: true
       ansible.builtin.get_url:
-        url: >
+        url: >-
           https://github.com/neovim/neovim/releases/
           download/{{ nvim_version }}/nvim.appimage
         dest: /usr/local/bin/nvim
