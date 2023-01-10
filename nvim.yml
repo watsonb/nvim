@@ -13,17 +13,38 @@
   gather_facts: false
   vars:
     ansible_connection: local
-    set_nvim_as_editor: true
-    set_nvim_as_vi_alias: true
-    set_nvim_as_vim_alias: true
+    set_nvim_as_editor: false
+    set_nvim_as_vi_alias: false
+    set_nvim_as_vim_alias: false
     nvim_version: v0.8.2  # check GitHub releases for available versions
     install_nvm: false
+    nvim_config_repo: https://github.com/watsonb/nvim.git
   tasks:
+
+    - name: SHELL | echo home
+      ansible.builtin.shell: echo $HOME
+      register: shell_out
+      changed_when: false
+      tags: [facts, home]
+
+    - name: SET_FACT | whoiam
+      ansible.builtin.set_fact:
+        my_home: "{{ shell_out.stdout }}"
+      tags: [facts, home]
+
+    - name: FILE | ensure $HOME/bin exists
+      ansible.builtin.file:
+        path: "{{ my_home }}/bin"
+        state: directory
+        mode: u=rwx,g=rx,o=rx
+      tags: [bin_dir]
 
     - name: GET_URL | download nvim.appimage and install to /usr/local/bin/
       become: true
       ansible.builtin.get_url:
-        url: https://github.com/neovim/neovim/releases/download/{{ nvim_version }}/nvim.appimage
+        url: >
+          https://github.com/neovim/neovim/releases/
+          download/{{ nvim_version }}/nvim.appimage
         dest: /usr/local/bin/nvim
         mode: u=rwx,g=rx,o=rx
       tags: [nvim_download]
@@ -36,14 +57,19 @@
         state: present
       tags: [apt, packages]
 
-    - name: SHELL | echo home
-      ansible.builtin.shell: echo $HOME
-      register: shell_out
-      changed_when: false
+    - name: FILE | ensure .config/nvim exists
+      ansible.builtin.file:
+        path: "{{ my_home }}/.config/nvim"
+        state: directory
+        mode: u=rwx,g=rx,o=rx
+      tags: [config, config_dir]
 
-    - name: SET_FACT | whoiam
-      ansible.builtin.set_fact:
-        my_home: "{{ shell_out.stdout }}"
+    - name: GIT | clone config
+      ansible.builtin.git:
+        repo: "{{ nvim_config_repo }}"
+        dest: "{{ my_home }}/.config/nvim"
+        version: master
+      tags: [config, clone]
 
     - name: LINEINFILE | set nvim as EDITOR
       ansible.builtin.lineinfile:
@@ -51,6 +77,7 @@
         line: 'export EDITOR=/usr/local/bin/nvim'
         state: present
       when: set_nvim_as_editor | bool
+      tags: [bashrc, editor]
 
     - name: LINEINFILE | setup vi alias
       ansible.builtin.lineinfile:
@@ -58,6 +85,7 @@
         line: 'alias vi=nvim'
         state: present
       when: set_nvim_as_vi_alias | bool
+      tags: [bashrc, vi_alias]
 
     - name: LINEINFILE | setup vim alias
       ansible.builtin.lineinfile:
@@ -65,4 +93,5 @@
         line: 'alias vim=nvim'
         state: present
       when: set_nvim_as_vim_alias | bool
+      tags: [bashrc, vim_alias]
 
