@@ -45,6 +45,7 @@
         line: 'export PATH=$PATH:{{ my_home }}/bin'
         state: present
         mode: u=rw,g=,o=
+      tags: [path, bash_profile]
 
     - name: GET_URL | download nvim.appimage and install to $HOME/bin/nvim
       # become: true
