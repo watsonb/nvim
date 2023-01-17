@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "moonfly"
+	color = color or "onedark_dark"
 
 	--vim.opt.background = "dark"
 	vim.cmd.colorscheme(color)
