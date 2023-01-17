@@ -60,21 +60,21 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  --use({
-	--  'rose-pine/neovim',
-	--  as = 'rose-pine',
-	--  config = function()
-	--	  vim.cmd('colorscheme rose-pine')
-	--  end
-  --})
+  use({
+	  'rose-pine/neovim',
+	  as = 'rose-pine',
+	  config = function()
+		  vim.cmd('colorscheme rose-pine')
+	  end
+  })
 
-  -- use({
-	 --  'bluz71/vim-moonfly-colors', branch = 'cterm-compat',
-	 --  as = 'moonfly',
-	 --  config = function()
-		--   vim.cmd('colorscheme moonfly')
-	 --  end
-  -- })
+  use({
+	  'bluz71/vim-moonfly-colors', branch = 'cterm-compat',
+	  as = 'moonfly',
+	  config = function()
+	  vim.cmd('colorscheme moonfly')
+	  end
+  })
 
   use "olimorris/onedarkpro.nvim"
 
