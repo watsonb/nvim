@@ -8,7 +8,7 @@ require'nvim-treesitter.configs'.setup {
 
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
+  auto_install = false,
 
   -- List of parsers to ignore installing (for "all")
   --ignore_install = { "javascript" },
@@ -24,7 +24,7 @@ require'nvim-treesitter.configs'.setup {
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
     -- the name of the parser)
     -- list of language that will be disabled
-    --disable = { "c", "rust" },
+    disable = { "yaml" },
     -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
     --disable = function(lang, buf)
     --    local max_filesize = 100 * 1024 -- 100 KB
@@ -47,5 +47,8 @@ require'nvim-treesitter.configs'.setup {
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     -- colors = {}, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
+  },
+  indent = {
+    enable = false
   }
 }
