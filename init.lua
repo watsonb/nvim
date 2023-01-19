@@ -130,5 +130,7 @@ return require('packer').startup(function(use)
 
   use('pearofducks/ansible-vim')
 
+  use('preservim/nerdtree')
+
 end)
 
