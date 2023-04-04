@@ -60,21 +60,21 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+  -- use({
+	 --  'rose-pine/neovim',
+	 --  as = 'rose-pine',
+	 --  config = function()
+		--   vim.cmd('colorscheme rose-pine')
+	 --  end
+  -- })
 
-  use({
-	  'bluz71/vim-moonfly-colors', branch = 'cterm-compat',
-	  as = 'moonfly',
-	  config = function()
-	  vim.cmd('colorscheme moonfly')
-	  end
-  })
+  -- use({
+	 --  'bluz71/vim-moonfly-colors', branch = 'cterm-compat',
+	 --  as = 'moonfly',
+	 --  config = function()
+	 --  vim.cmd('colorscheme moonfly')
+	 --  end
+  -- })
 
   use "olimorris/onedarkpro.nvim"
 
@@ -170,6 +170,18 @@ return require('packer').startup(function(use)
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
   end}
+
+  use {
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
+    config = function()
+      require('ufo').setup({
+        provider_selector = function(bufnr, filetype, buftype)
+          return {'treesitter', 'indent'}
+        end
+      })
+    end
+  }
 
 end)
 
