@@ -33,3 +33,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "replace word you're on" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "make file e[x]ecutable" })
+
+vim.keymap.set("n", "<leader>ntt", "<cmd>NERDTreeToggle<CR>", { desc = "[n]erd [t]ree [t]oggle" })
+vim.keymap.set("n", "<leader>Ntt", "<cmd>Neotree toggle<CR>", { desc = "[N]eo[t]ree [t]oggle" })
