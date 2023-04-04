@@ -165,5 +165,7 @@ return require('packer').startup(function(use)
     end
   }
 
+  use('mrjones2014/smart-splits.nvim')
+
 end)
 
