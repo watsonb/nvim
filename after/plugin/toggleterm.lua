@@ -1,0 +1,6 @@
+vim.keymap.set('n', '<leader>tf', '<CMD>ToggleTerm direction=float<cr>', { desc = "[t]oggleterm [f]loat" })
+vim.keymap.set('n', '<leader>th', '<CMD>ToggleTerm size=10 direction=horizontal<cr>', { desc = "[t]oggleterm [h]orizontal" })
+vim.keymap.set('n', '<leader>tv', '<CMD>ToggleTerm size=80 direction=vertical<cr>', { desc = "[t]oggleterm [v]ertical" })
+vim.keymap.set('n', '<leader>tt', '<CMD>ToggleTerm direction=tab<cr>', { desc = "[t]oggleterm [t]ab" })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { buffer = 0, desc = "escape text entry mode in terminal" })
+vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], { buffer = 0, desc = "escape text entry in terminal and ready to move to window" })

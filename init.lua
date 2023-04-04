@@ -167,5 +167,9 @@ return require('packer').startup(function(use)
 
   use('mrjones2014/smart-splits.nvim')
 
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
+
 end)
 
