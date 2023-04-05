@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   command = 'source <afile> | silent! LspStop | silent! LspStart | PackerCompile',
   group = packer_group,
   pattern = vim.fn.expand '$MYVIMRC',
-})
+}) 
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -182,6 +182,15 @@ return require('packer').startup(function(use)
       })
     end
   }
+
+  use {
+    'goolord/alpha-nvim',
+    config = function ()
+      require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+  }
+
+  use ('HiPhish/nvim-ts-rainbow2')
 
 end)
 
