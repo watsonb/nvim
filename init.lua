@@ -192,6 +192,16 @@ return require('packer').startup(function(use)
 
   use ('HiPhish/nvim-ts-rainbow2')
   use ('f-person/git-blame.nvim')
+  use {'xiyaowong/transparent.nvim', config = function()
+    require('transparent').setup({
+      extra_groups = {
+        "Normal",
+        "NormalFloat",
+        "NvimTreeNormal",
+      }
+    })
+  end
+  }
 
 end)
 
