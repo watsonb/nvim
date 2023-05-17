@@ -1,0 +1,5 @@
+## handy
+delete all empty lines | :g/^$/d
+delete all empty lints (alt) | :v/./d
+delete all empty lines or that contain only whitespace characters | :g/^\s*$/d
+delete all empty lines or that contain only whitespace characters (alt) | :v/\S/d

@@ -203,5 +203,15 @@ return require('packer').startup(function(use)
   end
   }
 
+  use {
+    'sudormrfbin/cheatsheet.nvim',
+
+    requires = {
+      {'nvim-telescope/telescope.nvim'},
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+    }
+  }
+
 end)
 

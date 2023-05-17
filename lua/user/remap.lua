@@ -38,3 +38,5 @@ vim.keymap.set("n", "<leader>ntt", "<cmd>NERDTreeToggle<CR>", { desc = "[n]erd [
 vim.keymap.set("n", "<leader>Ntt", "<cmd>Neotree toggle<CR>", { desc = "[N]eo[t]ree [t]oggle" })
 
 vim.keymap.set("n", "<leader>as", "<cmd>ASToggle<CR>", { desc = "[a]uto [s]ave toggle" })
+
+vim.keymap.set("n", "<leader>?", "<cmd>Cheatsheet<CR>", { desc = "open Cheatsheet" })
