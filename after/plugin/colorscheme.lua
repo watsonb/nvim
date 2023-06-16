@@ -1,6 +1,3 @@
--- Lua initialization file
-vim.g.moonflyCursorColor = false
-
 vim.cmd("colorscheme onedark_dark")
 
 require("onedarkpro").setup({

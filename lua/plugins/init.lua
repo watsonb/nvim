@@ -1,0 +1,17 @@
+return {
+  'olimorris/onedarkpro.nvim',
+  'nvim-treesitter/playground',
+  'theprimeagen/harpoon',
+  'ThePrimeagen/vim-be-good',
+  'mbbill/undotree',
+  'tpope/vim-fugitive',
+  'lewis6991/gitsigns.nvim',
+  'lukas-reineke/indent-blankline.nvim',
+  'jose-elias-alvarez/null-ls.nvim',
+  'pearofducks/ansible-vim',
+  'preservim/nerdtree',
+  'ryanoasis/vim-devicons',
+  'mrjones2014/smart-splits.nvim',
+  'HiPhish/nvim-ts-rainbow2',
+  'f-person/git-blame.nvim',
+}
