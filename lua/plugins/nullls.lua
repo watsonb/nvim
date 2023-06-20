@@ -9,7 +9,7 @@ return {
     require("null-ls").setup({
       sources = {
         -- code actions
-        null_ls.builtins.code_actions.cspell,
+        -- null_ls.builtins.code_actions.cspell,
         -- null_ls.builtins.code_actions.eslint,
         -- null_ls.builtins.code_actions.gitsigns,
         -- completion
@@ -18,7 +18,7 @@ return {
         -- diagnostics
         null_ls.builtins.diagnostics.ansiblelint,
         null_ls.builtins.diagnostics.yamllint,
-        null_ls.builtins.diagnostics.cspell,
+        -- null_ls.builtins.diagnostics.cspell,
         null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.markdownlint,
         -- formatting
