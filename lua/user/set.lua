@@ -1,3 +1,4 @@
+-- General Neovim stuff
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
@@ -34,3 +35,11 @@ vim.opt.timeoutlen = 1000
 
 vim.opt.list = true
 vim.opt.listchars='eol:$,tab:>-,space:.,trail:~,extends:>,precedes:<'
+
+vim.opt.pumblend = 15
+vim.opt.cursorline = true
+
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldcolumn = "3"

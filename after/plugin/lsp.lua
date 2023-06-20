@@ -32,6 +32,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 -- this helps with copilot setup
 -- cmp_mappings['<Tab>'] = nil
 -- cmp_mappings['<S-Tab>'] = nil
+vim.opt.completeopt = "menu,menuone,noinsert"
 
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings
