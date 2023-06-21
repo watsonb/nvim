@@ -5,14 +5,52 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "[P]roject [V]iew, open netrw file Explorer" })
 
+-- Move Lines
+vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move current line down" })
+vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move current line up" })
+vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move current line down" })
+vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move current line up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move selection up" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selection down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move selection up" })
+
+-- save file
+vim.keymap.set({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "jump down half page" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "jump up half page" })
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- better indenting
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
+-- lazy
+vim.keymap.set("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
+
+-- lazygit
+vim.keymap.set("n", "<leader>gg", function() Util.float_term({ "lazygit" }, { cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Lazygit (root dir)" })
+vim.keymap.set("n", "<leader>gG", function() Util.float_term({ "lazygit" }, {esc_esc = false, ctrl_hjkl = false}) end, { desc = "Lazygit (cwd)" })
+
+-- quit
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
+
+-- highlights under cursor
+-- if vim.fn.has("nvim-0.9.0") == 1 then
+vim.keymap.set("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
+-- end
+
+-- Terminal Mappings
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+vim.keymap.set("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
+vim.keymap.set("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
+vim.keymap.set("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
+vim.keymap.set("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
+vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+vim.keymap.set("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "[p]aste over selected and keep paste content in register" })
