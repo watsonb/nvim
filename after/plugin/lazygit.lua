@@ -1,4 +1,3 @@
-
 local Util = require("lazy.util")
 
 -- lazygit
