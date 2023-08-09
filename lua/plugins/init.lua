@@ -9,4 +9,5 @@ return {
   'ryanoasis/vim-devicons',
   -- 'mrjones2014/smart-splits.nvim',
   'f-person/git-blame.nvim',
+  'mg979/vim-visual-multi',
 }
