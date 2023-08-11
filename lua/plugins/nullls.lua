@@ -16,7 +16,7 @@ return {
         -- null_ls.builtins.completion.luasnip,
         null_ls.builtins.completion.spell,
         -- diagnostics
-        null_ls.builtins.diagnostics.ansiblelint,
+        -- null_ls.builtins.diagnostics.ansiblelint,
         null_ls.builtins.diagnostics.yamllint,
         -- null_ls.builtins.diagnostics.cspell,
         null_ls.builtins.diagnostics.flake8,
