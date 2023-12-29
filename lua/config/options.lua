@@ -60,3 +60,7 @@ vim.g.ansible_loop_keywords_highlight = "Statement"
 --vim.g.ansible_ftdetect_filename_regex = '\v(playbook|site|main|local|requirements)\.ya?ml$'
 --vim.g.ansible_ftdetect_filename_regex = '([\s\S]+)\.ya?ml$'
 vim.g.ansible_ftdetect_filename_regex = "([\\S]+)\\.ya?ml$"
+
+-- nvim 0.10 changes from 0.9
+-- blinking cursor fix
+vim.opt.guicursor = "n-v-c:blinkon500-blinkoff500"
