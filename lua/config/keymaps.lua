@@ -156,3 +156,7 @@ end, { desc = "Harpoon goto next file" })
 vim.keymap.set("n", "<leader>hp", function()
   require("harpoon.ui").nav_prev()
 end, { desc = "Harpoon goto prev file" })
+
+--Rest.nvim
+vim.keymap.set("n", "<leader>rr", "<CMD>Rest run<cr>", { desc = "Run rest request under cursor" })
+vim.keymap.set("n", "<leader>rl", "<CMD>Rest run last<cr>", { desc = "Re-Run last rest request" })
