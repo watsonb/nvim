@@ -64,3 +64,6 @@ vim.g.ansible_ftdetect_filename_regex = "([\\S]+)\\.ya?ml$"
 -- nvim 0.10 changes from 0.9
 -- blinking cursor fix
 vim.opt.guicursor = "n-v-c:blinkon500-blinkoff500"
+
+-- disable mini.pairs by Default
+vim.g.minipairs_disable = true
