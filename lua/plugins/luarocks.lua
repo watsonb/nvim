@@ -4,6 +4,6 @@ return {
     rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
   },
   config = function()
-    require("luarocks").setup({})
+    require("luarocks-nvim").setup({})
   end,
 }
