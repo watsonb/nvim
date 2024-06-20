@@ -4,13 +4,12 @@
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.dial",
     "lazyvim.plugins.extras.editor.harpoon2",
-    "lazyvim.plugins.extras.editor.trouble-v3",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "news": {
-    "NEWS.md": "4964",
+    "NEWS.md": "6077",
     "doc/news.txt": "25314"
   },
-  "version": 4
+  "version": 6
 }
