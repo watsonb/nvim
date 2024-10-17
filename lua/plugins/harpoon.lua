@@ -1,5 +1,6 @@
 return {
   "ThePrimeagen/harpoon",
+  enabled = false,
   branch = "master",
   -- event = "VeryLazy",
   dependencies = {

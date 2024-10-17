@@ -56,45 +56,45 @@ vim.keymap.set(
 vim.keymap.set(
   "n",
   "<leader>xx",
-  "<cmd>TroubleToggle<cr>",
-  { desc = "Toggle Trouble" },
+  "<cmd>Trouble diagnostics toggle<cr>",
+  { desc = "Toggle Trouble diagnostics" },
   { silent = true, noremap = true }
 )
-vim.keymap.set(
-  "n",
-  "<leader>xw",
-  "<cmd>TroubleToggle workspace_diagnostics<cr>",
-  { desc = "Toggle Trouble (workspace)" },
-  { silent = true, noremap = true }
-)
-vim.keymap.set(
-  "n",
-  "<leader>xd",
-  "<cmd>TroubleToggle document_diagnostics<cr>",
-  { desc = "Toggle Trouble (document)" },
-  { silent = true, noremap = true }
-)
-vim.keymap.set(
-  "n",
-  "<leader>xl",
-  "<cmd>TroubleToggle loclist<cr>",
-  { desc = "Toggle Trouble location list" },
-  { silent = true, noremap = true }
-)
-vim.keymap.set(
-  "n",
-  "<leader>xq",
-  "<cmd>TroubleToggle quickfix<cr>",
-  { desc = "Toggle Trouble quickfix" },
-  { silent = true, noremap = true }
-)
-vim.keymap.set(
-  "n",
-  "gR",
-  "<cmd>TroubleToggle lsp_references<cr>",
-  { desc = "Toggle Trouble LSP References" },
-  { silent = true, noremap = true }
-)
+-- vim.keymap.set(
+--   "n",
+--   "<leader>xw",
+--   "<cmd>TroubleToggle workspace_diagnostics<cr>",
+--   { desc = "Toggle Trouble (workspace)" },
+--   { silent = true, noremap = true }
+-- )
+-- vim.keymap.set(
+--   "n",
+--   "<leader>xd",
+--   "<cmd>TroubleToggle document_diagnostics<cr>",
+--   { desc = "Toggle Trouble (document)" },
+--   { silent = true, noremap = true }
+-- )
+-- vim.keymap.set(
+--   "n",
+--   "<leader>xl",
+--   "<cmd>TroubleToggle loclist<cr>",
+--   { desc = "Toggle Trouble location list" },
+--   { silent = true, noremap = true }
+-- )
+-- vim.keymap.set(
+--   "n",
+--   "<leader>xq",
+--   "<cmd>TroubleToggle quickfix<cr>",
+--   { desc = "Toggle Trouble quickfix" },
+--   { silent = true, noremap = true }
+-- )
+-- vim.keymap.set(
+--   "n",
+--   "gR",
+--   "<cmd>TroubleToggle lsp_references<cr>",
+--   { desc = "Toggle Trouble LSP References" },
+--   { silent = true, noremap = true }
+-- )
 
 -- smart splits
 -- recommended mappings
@@ -121,38 +121,44 @@ vim.keymap.set("n", "<leader>vs", "<cmd>VenvSelect<cr>", { desc = "[v]env [s]ele
 vim.keymap.set("n", "<leader>vc", "<cmd>VenvSelectCached<cr>", { desc = "[v]envselect [c]ached" })
 
 -- Harpoon
-vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Harpoon add buffer" })
-vim.keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon open UI" })
-vim.keymap.set("n", "<leader>h1", function()
-  require("harpoon.ui").nav_file(1)
-end, { desc = "Harpoon goto file 1" })
-vim.keymap.set("n", "<leader>h2", function()
-  require("harpoon.ui").nav_file(2)
-end, { desc = "Harpoon goto file 2" })
-vim.keymap.set("n", "<leader>h3", function()
-  require("harpoon.ui").nav_file(3)
-end, { desc = "Harpoon goto file 3" })
-vim.keymap.set("n", "<leader>h4", function()
-  require("harpoon.ui").nav_file(4)
-end, { desc = "Harpoon goto file 4" })
-vim.keymap.set("n", "<leader>h5", function()
-  require("harpoon.ui").nav_file(5)
-end, { desc = "Harpoon goto file 5" })
-vim.keymap.set("n", "<leader>h6", function()
-  require("harpoon.ui").nav_file(6)
-end, { desc = "Harpoon goto file 6" })
-vim.keymap.set("n", "<leader>h7", function()
-  require("harpoon.ui").nav_file(7)
-end, { desc = "Harpoon goto file 7" })
-vim.keymap.set("n", "<leader>h8", function()
-  require("harpoon.ui").nav_file(8)
-end, { desc = "Harpoon goto file 8" })
-vim.keymap.set("n", "<leader>h9", function()
-  require("harpoon.ui").nav_file(9)
-end, { desc = "Harpoon goto file 9" })
-vim.keymap.set("n", "<leader>hn", function()
-  require("harpoon.ui").nav_next()
-end, { desc = "Harpoon goto next file" })
-vim.keymap.set("n", "<leader>hp", function()
-  require("harpoon.ui").nav_prev()
-end, { desc = "Harpoon goto prev file" })
+-- Try using Harpoon2 via lazyvim extras and their stock keymaps
+-- vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Harpoon add buffer" })
+-- vim.keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon open UI" })
+-- vim.keymap.set("n", "<leader>h1", function()
+--   require("harpoon.ui").nav_file(1)
+-- end, { desc = "Harpoon goto file 1" })
+-- vim.keymap.set("n", "<leader>h2", function()
+--   require("harpoon.ui").nav_file(2)
+-- end, { desc = "Harpoon goto file 2" })
+-- vim.keymap.set("n", "<leader>h3", function()
+--   require("harpoon.ui").nav_file(3)
+-- end, { desc = "Harpoon goto file 3" })
+-- vim.keymap.set("n", "<leader>h4", function()
+--   require("harpoon.ui").nav_file(4)
+-- end, { desc = "Harpoon goto file 4" })
+-- vim.keymap.set("n", "<leader>h5", function()
+--   require("harpoon.ui").nav_file(5)
+-- end, { desc = "Harpoon goto file 5" })
+-- vim.keymap.set("n", "<leader>h6", function()
+--   require("harpoon.ui").nav_file(6)
+-- end, { desc = "Harpoon goto file 6" })
+-- vim.keymap.set("n", "<leader>h7", function()
+--   require("harpoon.ui").nav_file(7)
+-- end, { desc = "Harpoon goto file 7" })
+-- vim.keymap.set("n", "<leader>h8", function()
+--   require("harpoon.ui").nav_file(8)
+-- end, { desc = "Harpoon goto file 8" })
+-- vim.keymap.set("n", "<leader>h9", function()
+--   require("harpoon.ui").nav_file(9)
+-- end, { desc = "Harpoon goto file 9" })
+-- vim.keymap.set("n", "<leader>hn", function()
+--   require("harpoon.ui").nav_next()
+-- end, { desc = "Harpoon goto next file" })
+-- vim.keymap.set("n", "<leader>hp", function()
+--   require("harpoon.ui").nav_prev()
+-- end, { desc = "Harpoon goto prev file" })
+
+--Rest.nvim
+--Not using rest.nvim in favor of new kalua rest client configured via lazy extras
+-- vim.keymap.set("n", "<leader>rr", "<CMD>Rest run<cr>", { desc = "Run rest request under cursor" })
+-- vim.keymap.set("n", "<leader>rl", "<CMD>Rest run last<cr>", { desc = "Re-Run last rest request" })

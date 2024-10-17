@@ -1,7 +1,22 @@
-require 'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup({
   -- A list of parser names, or "all"
-  ensure_installed = { "bash", "c", "diff", "dockerfile", "jq", "json", "lua", "make", "markdown", "python", "toml",
-    "yaml" },
+  ensure_installed = {
+    "bash",
+    "c",
+    "diff",
+    "dockerfile",
+    "http",
+    "graphql",
+    "jq",
+    "json",
+    "lua",
+    "make",
+    "markdown",
+    "python",
+    "toml",
+    "xml",
+    "yaml",
+  },
   --ensure_installed = { "c", "help", "javascript", "lua", "rust", "typescript"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -12,7 +27,8 @@ require 'nvim-treesitter.configs'.setup {
   auto_install = false,
 
   -- List of parsers to ignore installing (for "all")
-  --ignore_install = { "javascript" },
+  ignore_install = { "javascript" },
+  modules = {},
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
@@ -52,6 +68,6 @@ require 'nvim-treesitter.configs'.setup {
   --   strategy = require('ts-rainbow').strategy.global,
   -- },
   indent = {
-    enable = false
-  }
-}
+    enable = false,
+  },
+})
