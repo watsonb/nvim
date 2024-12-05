@@ -14,6 +14,7 @@ return {
       "html-lsp",
       "jinja-lsp",
       "json-lsp",
+      -- "kulala_ls",  -- not yet supported by Mason
       "lua-language-server",
       "markdown-toc",
       "markdownlint",
