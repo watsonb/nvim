@@ -16,7 +16,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.dap.nlua" },
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.editor.mini-diff" },
-    { import = "lazyvim.plugins.extras.lang.ansible" },
+    -- { import = "lazyvim.plugins.extras.lang.ansible" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.python" },
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
