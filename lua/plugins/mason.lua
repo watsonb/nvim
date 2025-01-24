@@ -8,6 +8,7 @@ return {
   opts = {
     ensure_installed = {
       "ansible-language-server",
+      -- "ansible-lint",
       "bash-language-server",
       "debugpy",
       "dockerfile-language-server",
