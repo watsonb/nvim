@@ -1,12 +1,5 @@
 {
-  "extras": [
-    "lazyvim.plugins.extras.coding.luasnip",
-    "lazyvim.plugins.extras.coding.yanky",
-    "lazyvim.plugins.extras.editor.dial",
-    "lazyvim.plugins.extras.editor.harpoon2",
-    "lazyvim.plugins.extras.lang.markdown",
-    "lazyvim.plugins.extras.util.mini-hipatterns"
-  ],
+  "extras": [],
   "news": {
     "NEWS.md": "10960",
     "doc/news.txt": "12981"
