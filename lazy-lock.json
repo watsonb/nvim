@@ -34,6 +34,7 @@
   "mini.diff": { "branch": "main", "commit": "ec8a5ae365c5d15920721ea42b1351dbc9e61f2d" },
   "mini.icons": { "branch": "main", "commit": "397ed3807e96b59709ef3292f0a3e253d5c1dc0a" },
   "mini.pairs": { "branch": "main", "commit": "69864a2efb36c030877421634487fd90db1e4298" },
+  "mssql.nvim": { "branch": "main", "commit": "ff1509834589770b8d8d1a4dd8873e90383d4b36" },
   "music-controls.nvim": { "branch": "master", "commit": "35e6a644d66e916aeaad47b3f76f3dc608a32b68" },
   "neo-tree.nvim": { "branch": "main", "commit": "f481de16a0eb59c985abac8985e3f2e2f75b4875" },
   "noice.nvim": { "branch": "main", "commit": "0427460c2d7f673ad60eb02b35f5e9926cf67c59" },
