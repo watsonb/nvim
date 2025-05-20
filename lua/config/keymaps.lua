@@ -117,8 +117,8 @@ vim.keymap.set("n", "<leader><leader>k", require("smart-splits").swap_buf_up, { 
 vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right, { desc = "swap buffer right" })
 
 -- venv select
-vim.keymap.set("n", "<leader>vs", "<cmd>VenvSelect<cr>", { desc = "[v]env [s]elect" })
-vim.keymap.set("n", "<leader>vc", "<cmd>VenvSelectCached<cr>", { desc = "[v]envselect [c]ached" })
+-- vim.keymap.set("n", "<leader>vs", "<cmd>VenvSelect<cr>", { desc = "[v]env [s]elect" })
+-- vim.keymap.set("n", "<leader>vc", "<cmd>VenvSelectCached<cr>", { desc = "[v]envselect [c]ached" })
 
 -- Harpoon
 -- Try using Harpoon2 via lazyvim extras and their stock keymaps
