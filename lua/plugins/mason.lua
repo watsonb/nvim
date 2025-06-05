@@ -1,6 +1,7 @@
 return {
 
-  "williamboman/mason.nvim",
+  -- "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   cmd = "Mason",
   keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
   build = ":MasonUpdate",
@@ -25,7 +26,7 @@ return {
       "pylint",
       "pyright",
       "ruff",
-      "ruff-lsp",
+      -- "ruff-lsp",
       "shfmt",
       "stylua",
       "terraform-ls",
