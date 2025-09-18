@@ -1,7 +1,7 @@
 return {
   "tris203/precognition.nvim",
   enabled = false,
-  config = {
+  opts = {
     -- startVisible = true,
     -- showBlankVirtLine = true,
     -- hints = {
