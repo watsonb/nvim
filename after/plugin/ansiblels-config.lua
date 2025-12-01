@@ -7,28 +7,28 @@
 --
 -- Also, WTF about all of this is unique to having issues linting Ansible role project, but not playbook projects or
 -- seemingly anything else that is registered as an "ansible" document type.
-require("lspconfig").ansiblels.setup({
-  -- Add any other configurations for ansiblels here
-  -- Example: Add custom arguments to ansible-lint
-  settings = {
-    ansible = {
-      ansibleLint = {
-        arguments = {
-          "--format",
-          "codeclimate", -- Force CodeClimate/JSON output format
-        },
-      },
-      -- validation = {
-      --   -- enabled = true,
-      --   lint = {
-      --     -- enabled = true,
-      --     arguments = {
-      --       "--format",
-      --       "codeclimate",
-      --     },
-      --     -- path = "ansible-lint",
-      --   },
-      -- },
-    },
-  },
-})
+-- require("lspconfig").ansiblels.setup({
+--   -- Add any other configurations for ansiblels here
+--   -- Example: Add custom arguments to ansible-lint
+--   settings = {
+--     ansible = {
+--       ansibleLint = {
+--         arguments = {
+--           "--format",
+--           "codeclimate", -- Force CodeClimate/JSON output format
+--         },
+--       },
+--       -- validation = {
+--       --   -- enabled = true,
+--       --   lint = {
+--       --     -- enabled = true,
+--       --     arguments = {
+--       --       "--format",
+--       --       "codeclimate",
+--       --     },
+--       --     -- path = "ansible-lint",
+--       --   },
+--       -- },
+--     },
+--   },
+-- })
