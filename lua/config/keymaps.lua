@@ -162,3 +162,13 @@ vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right,
 --Not using rest.nvim in favor of new kalua rest client configured via lazy extras
 -- vim.keymap.set("n", "<leader>rr", "<CMD>Rest run<cr>", { desc = "Run rest request under cursor" })
 -- vim.keymap.set("n", "<leader>rl", "<CMD>Rest run last<cr>", { desc = "Re-Run last rest request" })
+
+-- strudel
+local strudel = require("strudel")
+vim.keymap.set("n", "<leader><leader>sl", strudel.launch, { desc = "Launch Strudel" })
+vim.keymap.set("n", "<leader><leader>sq", strudel.quit, { desc = "Quit Strudel" })
+vim.keymap.set("n", "<leader><leader>st", strudel.toggle, { desc = "Toggle Strudel Play/Stop" })
+vim.keymap.set("n", "<leader><leader>su", strudel.update, { desc = "Update Strudel" })
+vim.keymap.set("n", "<leader><leader>ss", strudel.stop, { desc = "Stop Strudel" })
+vim.keymap.set("n", "<leader><leader>sb", strudel.set_buffer, { desc = "Set Strudel to current buffer" })
+vim.keymap.set("n", "<leader><leader>sx", strudel.execute, { desc = "Set Strudel to current buffer and update" })
