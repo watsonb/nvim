@@ -25,6 +25,8 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
     { import = "lazyvim.plugins.extras.util.rest" },
     { import = "lazyvim.plugins.extras.util.startuptime" },
+    { import = "lazyvim.plugins.extras.ai.copilot" },
+    -- { import = "lazyvim.plugins.extras.ai.sidekick" },  -- ok, listed as an extra here https://www.lazyvim.org/extras/ai/sidekick
     -- import/override with your plugins
     { import = "plugins" },
   },
