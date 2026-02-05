@@ -9,7 +9,11 @@ return {
     { ",v", "<cmd>VenvSelect<cr>" }, -- Open picker on keymap
   },
   opts = { -- this can be an empty lua table - just showing below for clarity.
-    search = {}, -- if you add your own searches, they go here.
+    search = {
+      find_home_venvs = {
+        command = "fd /bin/python$ ~/venvs --full-path",
+      },
+    }, -- if you add your own searches, they go here.
     options = {}, -- if you add plugin options, they go here.
   },
 }
