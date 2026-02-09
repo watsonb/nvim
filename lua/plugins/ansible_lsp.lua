@@ -1,4 +1,3 @@
-
 return {
   {
     "neovim/nvim-lspconfig",
@@ -35,11 +34,7 @@ return {
             },
           },
           root_dir = function(fname)
-            return require("lspconfig.util").root_pattern(
-              "ansible.cfg",
-              "requirements.yml",
-              ".git"
-            )(fname) or require("lspconfig.util").find_git_ancestor(fname)
+            return require("lspconfig.util").root_pattern("ansible.cfg", "requirements.yml", ".git")(fname)
           end,
         },
       },
