@@ -2,7 +2,7 @@ return {
   "Root-lee/screensaver.nvim",
   config = function()
     require("screensaver").setup({
-      idle_ms = 60 * 1000 * 10, -- Idle time in milliseconds (10 minutes)
+      idle_ms = 60 * 1000 * 2, -- Idle time in milliseconds (2 minutes)
       -- 🚀 Automatically start screensaver after idle time (set to false for manual only)
       auto_start = true,
 
@@ -40,8 +40,8 @@ return {
         "aquarium",
         "bounce",
         "cmatrix",
-        "figlet",
-        "fire",
+        --"figlet",
+        --"fire",
         "game_of_life",
         "matrix",
         "move_left",
