@@ -37,51 +37,79 @@
 -- installed (that would presumably have more up-to-date collections) and
 -- specify the python path below to that venv such that my "daily" venv could
 -- be different than my "editor" venv.
-require("lspconfig").ansiblels.setup({
-  -- Add any other configurations for ansiblels here
-  -- Example: Add custom arguments to ansible-lint
-  -- cmd = require("devcontainers").lsp_cmd({ "ansible-language-server", "--stdio" }),
-  -- filetypes = { "yaml.ansible" },
-  settings = {
-    ansible = {
-      ansible = {
-        path = "ansible", -- default value: ansible
-        useFullyQualifiedCollectionNames = true, -- default value: false
-      },
-      python = {
-        interpreterPath = "python3",
-        activtionScript = "",
-      },
-      executionEnvironment = {
-        containerEngine = "podman", -- default value: "docker"
-        enabled = false, -- default value: false
-        -- image = "ghcr.io/ansible/ansible-dev-tools:latest",  -- default value: "ansible/ansible-lint:latest"
-        image = "ghcr.io/ansible/community-ansible-dev-tools:latest", -- default value: "ansible/ansible-lint:latest"
-        pull = {
-          policy = "missing", -- default value: "missing"
-          arguments = {
-            "--tls-verify=false", -- default value: [""]
-          },
-        },
-        volumeMounts = {},
-        containerOptions = "",
-      },
-      completion = {
-        provideRedirectModules = true,
-        provideModuleOptionAliases = true,
-      },
-      validation = {
-        enabled = true,
-        lint = {
-          enabled = true,
-          arguments = "",
-          -- arguments = {
-          --   "--format",
-          --   "codeclimate",
-          -- },
-          path = "ansible-lint",
-        },
-      },
-    },
-  },
-})
+-- require("lspconfig").ansiblels.setup({
+--   -- Add any other configurations for ansiblels here
+--   -- Example: Add custom arguments to ansible-lint
+--   -- cmd = require("devcontainers").lsp_cmd({ "ansible-language-server", "--stdio" }),
+--   -- filetypes = { "yaml.ansible" },
+--   root_dir = require("lspconfig.util").root_pattern("ansible.cfg", ".ansible-lint", ".git", "inventory"),
+--   settings = {
+--     ansible = {
+--       ansible = {
+--         path = "ansible", -- default value: ansible
+--         useFullyQualifiedCollectionNames = true, -- default value: false
+--       },
+--       python = {
+--         interpreterPath = "python3",
+--         activtionScript = "",
+--       },
+--       executionEnvironment = {
+--         containerEngine = "podman", -- default value: "docker"
+--         enabled = false, -- default value: false
+--         -- image = "ghcr.io/ansible/ansible-dev-tools:latest",  -- default value: "ansible/ansible-lint:latest"
+--         image = "ghcr.io/ansible/community-ansible-dev-tools:latest", -- default value: "ansible/ansible-lint:latest"
+--         pull = {
+--           policy = "missing", -- default value: "missing"
+--           arguments = {
+--             "--tls-verify=false", -- default value: [""]
+--           },
+--         },
+--         volumeMounts = {},
+--         containerOptions = "",
+--       },
+--       completion = {
+--         provideRedirectModules = true,
+--         provideModuleOptionAliases = true,
+--       },
+--       validation = {
+--         enabled = true,
+--         lint = {
+--           enabled = true,
+--           arguments = "",
+--           -- arguments = {
+--           --   "--format",
+--           --   "codeclimate",
+--           -- },
+--           path = "ansible-lint",
+--         },
+--       },
+--     },
+--   },
+-- })
+--
+-- require("lspconfig").yamlls.setup({
+--   settings = {
+--     yaml = {
+--       schemas = {
+--         ["https://raw.githubusercontent.com/ansible/ansible-lint/main/schemas/ansible.json"] = "ansible/*.y*ml",
+--         ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible/ansible-playbook.json"] = "*playbook*.yml",
+--         ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible/ansible.json"] = "ansible.y*ml",
+--         -- You can add more specific schemas here if needed.
+--       },
+--       customTags = {
+--         "!ENV scalar",
+--         "!include_dir_named mapping",
+--         "!include_dir_merge_named mapping",
+--         "!include_dir_list sequence",
+--         "!include_dir_merge_list sequence",
+--         "!vault",
+--         "!encrypted",
+--         "!secret",
+--         "!unsafe",
+--       },
+--     },
+--   },
+--   root_dir = function(fname)
+--     return require("lspconfig.util").root_pattern("ansible.cfg", "requirements.yml", ".git")(fname)
+--   end,
+-- })
