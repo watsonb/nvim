@@ -5,7 +5,7 @@ return {
   },
   cmd = "Store",
   keys = {
-    { "<leader>s", "<cmd>Store<cr>", desc = "Open Plugin Store" },
+    -- { "<leader>s", "<cmd>Store<cr>", desc = "Open Plugin Store" },  -- I keep accidentally triggering this
   },
   opts = {
     -- optional configuration here
