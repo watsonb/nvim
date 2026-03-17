@@ -2,9 +2,9 @@ return {
   "Root-lee/screensaver.nvim",
   config = function()
     require("screensaver").setup({
-      idle_ms = 60 * 1000 * 2, -- Idle time in milliseconds (2 minutes)
+      idle_ms = 60 * 1000 * 10, -- Idle time in milliseconds (2 minutes)
       -- 🚀 Automatically start screensaver after idle time (set to false for manual only)
-      auto_start = true,
+      auto_start = false,
 
       -- 🛡️ Disable auto-start when Neovim loses focus (e.g. switching tmux windows)
       -- Requires `set -g focus-events on` in your tmux.conf
