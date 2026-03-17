@@ -3,5 +3,6 @@ require("copilot").setup({
     ansible = true,
     yaml = true,
     yml = true,
+    ["yaml.ansible"] = true, -- hail mary?
   },
 })
