@@ -50,6 +50,12 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldcolumn = "3"
 
+-- I want my default root to be the current working directory ("cwd") since
+-- I don't do monorepo stuff usually and I don't want LazyVim to be overly
+-- smart/deterministic about it.
+-- vim.g.root_spec = {"lsp", {".git", "lua"}, "cwd"}  -- the default spec
+vim.g.root_spec = { "cwd" }
+
 -- ansible-vim
 --vim.g.ansible_unindent_after_newline = 1
 --vim.g.ansible_yamlKeyName = 'yamlKey'
