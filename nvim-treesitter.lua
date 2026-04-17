@@ -1,6 +1,9 @@
-{
+return {
   "nvim-treesitter/nvim-treesitter",
-  branch = "main",
+  -- pin to a commit
+  commit = "7caec27",
+  -- pin to a branch
+  -- branch = "main",
   version = false, -- last release is way too old and doesn't work on Windows
   build = function()
     local TS = require("nvim-treesitter")
