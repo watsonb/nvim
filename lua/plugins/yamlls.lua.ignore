@@ -4,6 +4,7 @@ return {
   opts = {
     servers = {
       yamlls = {
+        autostart = false,
         -- make sure mason installs this for you
         keys = {
           -- `gopls` only supports `textDocument/prepareCallHierarchy` if
