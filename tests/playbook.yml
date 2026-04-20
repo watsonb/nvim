@@ -6,6 +6,12 @@
 # broken because all string text is green.  I want plain text to be white and
 # I want inline Jinja to be highlighted correctly.  What is wrong here?
 #
+# OK, here's the deal.  On 2026-04-20, I got this finally *working* by removing
+# ./nvim-treesitter.lua and adding lua/plugins/nvim-treesitter.lua with just
+# the minimal(ish) things to disable yaml highlights.  This is the key.  You
+# need to disable YAML highlights in nvim-treesitter or it will override the
+# highlights supplied by ansible-vim and ansible lsp server.
+#
 
 - name: PLAY | Elastic Search | Configure All Elastic Search Nodes
   hosts: "{{ variable_host | default('elk_elastic_search') }}:&elk_elastic_search"
